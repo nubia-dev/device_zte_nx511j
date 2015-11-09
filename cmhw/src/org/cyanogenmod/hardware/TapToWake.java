@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2015 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,23 +18,46 @@ package org.cyanogenmod.hardware;
 
 import org.cyanogenmod.hardware.util.FileUtils;
 
+import java.io.File;
+
+/**
+ * Tap (usually double-tap) to wake. This *should always* be supported by
+ * the hardware directly. A lot of recent touch controllers have a firmware
+ * option for this
+ */
 public class TapToWake {
 
-    private static String CONTROL_PATH = "/sys/devices/virtual/touchscreen/touchscreen_dev/gesture_ctrl";
+    private static final String WAKEUP_GESTURE_FILE = "/data/tp/easy_wakeup_gesture";
 
+    /**
+     * Whether device supports it
+     *
+     * @return boolean Supported devices must return always true
+     */
     public static boolean isSupported() {
-        return true;
+	    File file = new File(WAKEUP_GESTURE_FILE);
+	    return file.exists();
     }
 
-    public static boolean isEnabled()  {
-        boolean enabled = false;
-        String state = FileUtils.readOneLine(CONTROL_PATH);
-        if (state != null)
-            enabled = (Long.decode(state) & 0x200) == 0x200;
-        return enabled;
+    /**
+     * This method return the current activation state
+     *
+     * @return boolean Must be false when feature is not supported or 
+     * disabled.
+     */
+    public static boolean isEnabled() {
+	    return !(FileUtils.readOneLine(WAKEUP_GESTURE_FILE).equals("0") || FileUtils.readOneLine(WAKEUP_GESTURE_FILE).equals("0x00"));
     }
 
-    public static boolean setEnabled(boolean state)  {
-        return FileUtils.writeLine(CONTROL_PATH, (state ? "double_click=true" : "double_click=false"));
+    /**
+     * This method allows to set activation state
+     *
+     * @param state The new state
+     * @return boolean for on/off, exception if unsupported
+     */
+    
+    public static boolean setEnabled(boolean state) {
+	    return FileUtils.writeLine(WAKEUP_GESTURE_FILE, String.valueOf(state?1:0));
     }
+
 }

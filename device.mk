@@ -86,7 +86,7 @@ PRODUCT_COPY_FILES += \
 
 # IRQ balance
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/msm_irqbalance.conf:system/etc/msm_irqbalance.conf
+    $(DEVICE_PATH)/configs/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -155,6 +155,10 @@ PRODUCT_PACKAGES += \
     com.dsi.ant.antradio_library \
     libantradio
 
+# ifree card needed APNs
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/apns-conf-cdma.xml:system/etc/apns-conf.xml
+
 # Audio
 PRODUCT_PACKAGES += \
     audiod \
@@ -217,6 +221,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     gps.msm8916
 
+# KeyHandler
+PRODUCT_PACKAGES += \
+    com.cyanogenmod.keyhandler
+
+PRODUCT_SYSTEM_SERVER_JARS += com.cyanogenmod.keyhandler
+# never dexopt the keyhandler
+$(call add-product-dex-preopt-module-config,com.cyanogenmod.keyhandler,disable)
+
 # Keystore
 PRODUCT_PACKAGES += \
     keystore.msm8916
@@ -226,6 +238,12 @@ PRODUCT_PACKAGES += \
     lights.msm8916
 
 PRODUCT_PACKAGES += \
+    libc2dcolorconvert \
+    libdivxdrmdecrypt \
+    libOmxSwVencMpeg4 \
+    libOmxSwVencHevc \
+    libOmxVdecHevc \
+    libOmxVidcCommon \
     libdashplayer \
     libOmxAacEnc \
     libOmxAmrEnc \
@@ -258,7 +276,8 @@ PRODUCT_PACKAGES += \
     init.qcom.power.rc \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+    tp_node.sh
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
