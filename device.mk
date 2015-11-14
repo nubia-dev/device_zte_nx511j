@@ -310,7 +310,10 @@ PRODUCT_PACKAGES += \
     dhcpcd.conf \
     wpa_supplicant \
     wcnss_service
-
+    
+PRODUCT_PACKAGES += \
+    libboringssl-compat
+    
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
 
