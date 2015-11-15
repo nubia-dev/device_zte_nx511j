@@ -313,7 +313,7 @@ PRODUCT_PACKAGES += \
 
 # BoringSSL compatability wrapper    
 PRODUCT_PACKAGES += \
-    libboringssl-compat
+    libboringssl-compat \
     libstlport
     
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
