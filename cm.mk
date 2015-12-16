@@ -22,7 +22,9 @@ BOARD_VENDOR := zte
 PRODUCT_DEVICE := nx511j
 
 # CMHW
-BOARD_HARDWARE_CLASS := device/zte/nx511j/cmhw
+
+BOARD_HARDWARE_CLASS := device/zte/nx511j/cmhw \
+			hardware/cyanogen/cmhw
 
 PRODUCT_GMS_CLIENTID_BASE := android-zte
 
