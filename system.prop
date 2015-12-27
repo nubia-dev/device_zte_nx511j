@@ -187,3 +187,6 @@ ro.mk.maintainer=xiaoxiao
 
 # fm config
 hw.fm.mode=normal
+
+# Scheduler
+sys.io.scheduler=row
