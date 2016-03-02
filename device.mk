@@ -13,9 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-DEVICE_PATH := device/zte/nx511j
+DEVICE_PATH := device/nubia/nx511j
 
-$(call inherit-product-if-exists, vendor/zte/nx511j/nx511j-vendor.mk)
+$(call inherit-product-if-exists, vendor/nubia/nx511j/nx511j-vendor.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay

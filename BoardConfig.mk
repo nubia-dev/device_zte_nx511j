@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-DEVICE_PATH := device/zte/nx511j
+DEVICE_PATH := device/nubia/nx511j
 
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
@@ -52,7 +52,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET     := 0x02000000
-TARGET_KERNEL_SOURCE := kernel/zte/nx511j
+TARGET_KERNEL_SOURCE := kernel/nubia/nx511j
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_HEADER_ARCH := arm64
@@ -202,4 +202,4 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
 # inherit from the proprietary version
--include vendor/zte/nx511j/BoardConfigVendor.mk
+-include vendor/nubia/nx511j/BoardConfigVendor.mk

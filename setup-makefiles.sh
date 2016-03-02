@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DEVICE=nx511j
-VENDOR=zte
+VENDOR=nubia
 
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk

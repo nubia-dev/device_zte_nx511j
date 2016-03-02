@@ -2,7 +2,7 @@
 
 #set -e
 export DEVICE=nx511j
-export VENDOR=zte
+export VENDOR=nubia
 
 if [ $# -eq 0 ]; then
   SRC=adb

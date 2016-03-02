@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, device/zte/nx511j/full_nx511j.mk)
+$(call inherit-product, device/nubia/nx511j/full_nx511j.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/mk/config/common_full_phone.mk)
@@ -22,9 +22,9 @@ BOARD_VENDOR := zte
 PRODUCT_DEVICE := nx511j
 
 # MKHW
-BOARD_HARDWARE_CLASS := device/zte/nx511j/mkhw
+BOARD_HARDWARE_CLASS := device/nubia/nx511j/mkhw
 
-PRODUCT_GMS_CLIENTID_BASE := android-zte
+PRODUCT_GMS_CLIENTID_BASE := android-nubia
 
 TARGET_VENDOR_PRODUCT_NAME := NX511J
 TARGET_VENDOR_DEVICE_NAME := Z9MINI

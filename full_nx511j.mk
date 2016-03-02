@@ -21,7 +21,7 @@ endif
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from nx511j device
-$(call inherit-product, device/zte/nx511j/device.mk)
+$(call inherit-product, device/nubia/nx511j/device.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := nx511j
