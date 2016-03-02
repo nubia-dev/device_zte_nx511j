@@ -20,7 +20,7 @@ TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/keyboards/Generic.kl:system/usr/keylayout/Generic.kl , $(PRODUCT_COPY_FILES))
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := NX511J,nx511j,Nx511J,NX511j
+TARGET_OTA_ASSERT_DEVICE := NX511J,NX511J_V3
 
 # Architecture
 TARGET_ARCH := arm64
